@@ -1,3 +1,7 @@
+output "cosmosdb_postgresql_coordinator_configurations_id" {
+  description = "Map of id values across all cosmosdb_postgresql_coordinator_configurations, keyed the same as var.cosmosdb_postgresql_coordinator_configurations"
+  value       = { for k, v in azurerm_cosmosdb_postgresql_coordinator_configuration.cosmosdb_postgresql_coordinator_configurations : k => v.id }
+}
 output "cosmosdb_postgresql_coordinator_configurations_cluster_id" {
   description = "Map of cluster_id values across all cosmosdb_postgresql_coordinator_configurations, keyed the same as var.cosmosdb_postgresql_coordinator_configurations"
   value       = { for k, v in azurerm_cosmosdb_postgresql_coordinator_configuration.cosmosdb_postgresql_coordinator_configurations : k => v.cluster_id }
